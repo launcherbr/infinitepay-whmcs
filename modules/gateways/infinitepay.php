@@ -1,9 +1,9 @@
 <?php
 /**
  * Módulo InfinitePay API para WHMCS
- * Desenvolvido por Launcher & Co.
+ * Desenvolvido por Launcher Tech
  * launcher.com.br - licencas.digital
- * Versão: Final Robusta (Com Tratamento de Erros e Correção de Handle)
+ * Versão: Final Robusta (Com Tratamento de Erros e Correção de Handle e Design Visual)
  */
 
 if (!defined("WHMCS")) {
@@ -30,25 +30,43 @@ function infinitepay_config()
             'Value' => 'InfinitePay API',
         ),
         'infiniteHandle' => array(
-            'FriendlyName' => 'Sua InfiniteTag (Handle)',
+            'FriendlyName' => 'A sua InfiniteTag (Handle)',
             'Type' => 'text',
-            'Size' => '30',
-            'Description' => 'Seu usuário no app InfinitePay (sem @ ou $).',
+            'Size' => '60',
+            'Description' => '<br><small class="text-muted" style="color:#777;">O seu utilizador na app InfinitePay (sem @ ou $).</small>',
         ),
         'instructions' => array(
             'FriendlyName' => 'Instruções',
             'Type' => 'textarea',
             'Rows' => '3',
             'Default' => 'Clique no botão abaixo para pagar com segurança via InfinitePay.',
+            'Description' => '<br><small class="text-muted" style="color:#777;">Mensagem exibida ao cliente acima do botão de pagamento na fatura.</small>',
         ),
         'webhookInfo' => array(
             'FriendlyName' => 'Webhook URL (Automático)',
             'Type' => 'text',
             'Description' => '
-                <script>jQuery("input[name=\'field[webhookInfo]\']").hide();</script>
-                <div class="alert alert-info" style="margin: 5px 0;">
-                    O módulo enviará automaticamente esta URL para a InfinitePay:<br>
-                    <strong>' . $webhookUrl . '</strong>
+                <script>
+                    // Esconde a caixa de input padrão do WHMCS
+                    jQuery("input[name=\'field[webhookInfo]\']").hide();
+                    
+                    function copyInfinitePayUrl() {
+                        var urlField = document.getElementById("infiniteWebhookUrl");
+                        urlField.select();
+                        document.execCommand("copy");
+                        var btn = document.getElementById("btnCopyInfinite");
+                        btn.innerHTML = "<i class=\"fas fa-check\"></i> Copiado!";
+                        setTimeout(function() { btn.innerHTML = "<i class=\"fas fa-copy\"></i> Copiar"; }, 2000);
+                    }
+                </script>
+                <div class="alert alert-info" style="margin: 5px 0 0 0; padding: 15px; border-radius: 5px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+                    <div style="margin-bottom: 10px;">
+                        <i class="fas fa-cogs"></i> <strong>Informação:</strong> O módulo enviará automaticamente a URL abaixo para a InfinitePay a cada transação para garantir a baixa automática.
+                    </div>
+                    <div style="display: flex; gap: 5px; max-width: 600px;">
+                        <input type="text" id="infiniteWebhookUrl" value="' . $webhookUrl . '" class="form-control" readonly onclick="this.select();" style="cursor:pointer; background-color: #fff; flex-grow: 1;">
+                        <button type="button" id="btnCopyInfinite" class="btn btn-info" onclick="copyInfinitePayUrl()" style="white-space: nowrap;"><i class="fas fa-copy"></i> Copiar</button>
+                    </div>
                 </div>',
         ),
     );
