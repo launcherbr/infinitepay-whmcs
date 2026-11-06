@@ -17,7 +17,7 @@ O módulo utiliza a API v2 para gerar links dinâmicos e processar o retorno aut
 * WHMCS 8.x
 * PHP 7.4 ou superior
 * **Conta InfinitePay:** É necessário ter uma conta ativa e sua "InfiniteTag" (Handle).
-  > [**Clique aqui para conhecer a InfinitePay e criar sua conta**](https://www.infinitepay.io/)
+  > [**Clique aqui para conhecer a InfinitePay e criar sua conta**](https://infinitepay.onelink.me/IGWD/launchertech)
 * Certificado SSL (HTTPS) ativo no seu domínio.
 
 ## 📋 Instruções
