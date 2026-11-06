@@ -48,8 +48,9 @@ Este módulo utiliza o recurso de `webhook_url` dinâmico da API. A cada cobran�
 
 ## 📄 Licença e Suporte
 
-* **Desenvolvido por**: HubApp / Launcher Tecnologia.
+* **Desenvolvido por**: HubApp / Launcher Tech.
 * **Suporte**: [licencas.digital](https://licencas.digital)
+* **Dev**: [laucher.com.brl](https://launcher.com.br)
 
 Para suporte ou dúvidas sobre a integração, acesse nosso site oficial.
 
@@ -61,7 +62,7 @@ Para suporte ou dúvidas sobre a integração, acesse nosso site oficial.
 >
 > Garanta mais credibilidade e segurança para o seu sistema por apenas **R$ 250,00 anuais**.
 >
-> [**👉 CLIQUE AQUI PARA CONTRATAR AGORA**](https://licencas.digital/store/whmcs/whmcs-validado)
+> [**👉 CLIQUE AQUI PARA CONTRATAR AGORA**](https://licencas.digital/store/whmcs/whmcs-verificado)
 >
 ---
 
